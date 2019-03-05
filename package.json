@@ -1,0 +1,26 @@
+{
+  "name": "fabric-kajmak-app",
+  "version": "1.0.0",
+  "description": "Hyperledger Fabric Kajmak Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Majra Caluk  i Dragoljuba Damjanovic",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "angular": "^1.4.3",
+    "angular-route": "^1.4.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "fabric-ca-client": "^1.1.0",
+    "fabric-client": "^1.1.0",
+    "grpc": "^1.16.1",
+    "log4js": "^0.6.38",
+    "mongoose": "^5.4.0"
+  }
+}

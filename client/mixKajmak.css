@@ -1,0 +1,138 @@
+.containerRest {
+    border: solid white 1px;
+    height: 90%;
+    overflow: auto;
+}
+
+.menu {
+    float:left;
+    width:20%;
+    text-align:center;
+    height: 100%;
+  }
+
+.menu a {
+    background-color: black;
+    border: solid #bf9b30 1px;
+    padding-top: 70px;
+    margin-top:7px;
+    display:block;
+    width:100%;
+    color: #bf9b30;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    height: 32%;
+  }
+
+.menu a.active {
+    background-color: #bf9b30;
+    color: white;
+}
+
+.main {
+    float:left;
+    border: solid white 1px;
+    width:80%;
+    padding:0 20px;
+    height: 100%;
+    text-align: center;
+}
+
+.main h2 {
+    text-transform: uppercase;
+}
+
+.form {
+    border: solid #bf9b30 3px;
+    background-color: black;
+    width: 45%;
+    font-size: 20px;
+    color: #bf9b30;
+    padding-top:10px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input, select {
+    font-size: 20px;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    padding: 2px;
+    color: black;
+    background-color: #eaeaea;
+}
+
+
+
+.mix {
+    background: #bf9b30;
+    border: none;
+    font-size: 20px;
+    color: black;
+    height: 50px;
+    width: 90%;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mix:hover {
+    color: silver;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: black;
+    height: 10%;
+}
+
+.footer h3 {
+    color: #aadb12;
+    text-align: center;
+}
+
+[ng-cloak] {
+  display: none !important;
+}
+
+.bell {
+    position: absolute;
+    top: 11%;
+    right: 90px;
+}
+
+img {
+    width:30px;
+    height:30px;
+}
+
+.notification {
+    background-color: black;
+    border-radius: 25px;
+    margin-right: 15px;
+}
+
+.logout {
+    position: absolute;
+    top: 11%;
+    right: 10px;
+    background: #bf9b30;
+    border: none;
+    height: 40px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logout:hover {
+    color: silver;
+    font-weight: bold;
+}
+
+span p {
+    color: red;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}

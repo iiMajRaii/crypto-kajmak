@@ -1,0 +1,45 @@
+<link rel="stylesheet" type="text/css" href="listKajmak.css">
+<div class="containerRest" ng-cloak>
+	<div class="menu">
+		<a href="#createKajmak">create kajmak</a>
+		<a class="active" href="#listKajmak">list kajmak</a>
+		<a href="#mixKajmak">mix kajmak</a>
+	</div>
+	<div class="main" ng-cloak>
+		<h2>Kajmak List</h2>
+		<!--<button class="query" ng-click="queryAllKajmak()">Show All Kajmak</button>-->
+		<div class="bell" ng-cloak>
+            <a href="#kajmakNotification">
+                <button class="notification" ng-cloak>
+                    <img class="zvono" src="image/notifikacijaIcon.png" alt="notification">
+                </button>
+            </a>
+        </div>
+        <button class="logout" ng-click="logOut()">Log Out</button>
+		<table id="all_kajmak" class="table" border="1">
+			<thead>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Owner</th>
+				<th>Animal</th>
+				<th>Location</th>
+				<th>Quantity</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="kajmak in all_kajmak">
+					<td>{{kajmak.Key}}</td>
+					<td ng-click="getDetails($index)"><a href="#details">{{kajmak.name}}</a></td>
+					<td>{{kajmak.owner}}</td>
+					<td>{{kajmak.animal}}</td>
+					<td>{{kajmak.location}}</td>
+					<td>{{kajmak.quantity}}</td>
+					<!--
+					<td><button class="delete" ng-click="deleteKajmak($index)"><img src="https://cdn2.iconfinder.com/data/icons/cleaning-19/30/30x30-10-512.png"
+							 alt="delete"></button></td>
+					-->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="footer"></div>

@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="addUser.css">
+<div class="container">        
+    <div class="main">
+        <h2>Add New User</h2>
+        <form class="form" name="addUserForm" novalidate autocomplete="off">
+            Enter Email: <br>
+            <input type="email" placeholder="Ex: dragoljuba.damjanovic@comtrade.com" name="user_email" ng-model="user.email" ng-pattern="/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/"><br>
+            <span ng-messages="addUserForm.user_email.$error" ng-show="addUserForm.user_email.$touched">
+                <p ng-message="pattern">Not an email!</p>
+            </span>
+            Enter Username: <br>
+            <input type="text" placeholder="Ex: daca" name="username" ng-model="user.username" ng-minlength="3" ng-maxlength="15" required><br>
+            <span ng-messages="addUserForm.username.$error" ng-show="addUserForm.username.$touched">
+                <p ng-message="required">Username is required!</p>
+                <p ng-message="minlength">Username is too short!</p>
+                <p ng-message="maxlength">Username is too long!</p>
+            </span>
+            Enter Password:<br>
+            <input type="password" name="user_password" ng-model="user.password" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\.!@#\$%\^&\*])(?=.{8,})/" required><br>
+            <span ng-messages="addUserForm.user_password.$error" ng-show="addUserForm.user_password.$touched">
+                <p ng-message="required">Password is required!</p>
+                <p ng-message="pattern">Password must contain at least 1 lowercase and 1 uppercase alphabetic character, 1 numeric character, 1 special character and be 8 characters or longer!</p>
+            </span>
+            Choose Organization: <br>
+            <select name="organization" ng-model="user.organization" required>
+                <option value="">
+                <option value="Org1">Org1
+                <option value="Org2">Org2
+            </select><br>
+            <span ng-messages="addUserForm.organization.$error" ng-show="addUserForm.organization.$touched">
+                <p ng-message="required">Organization is required!</p>
+            </span>
+            <input id="addUser" class="addUser" type="submit" value="Add User" ng-disabled="addUserForm.$invalid" ng-click="addUser()">
+        </form>
+        <button class="logout" ng-click="logOut()">Log Out</button>
+    </div>
+</div>
+<div class="footer">
+    <h3> {{poruka}} </h3>
+</div>

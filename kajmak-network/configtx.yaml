@@ -1,0 +1,76 @@
+###############################################################################
+# Profile
+###############################################################################
+Profiles:
+
+  ThreeOrgsOrdererGenesis:
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - *OrdererOrg
+    Consortiums:
+      KajmakConsortium:
+        Organizations:
+          - *Org1
+          - *Org2
+
+  ThreeOrgsChannel:
+    Consortium: KajmakConsortium
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *Org1
+        - *Org2
+
+############################################################################
+# SECTION: Organizations
+############################################################################
+Organizations:
+  - &OrdererOrg
+    Name: OrdererMSP
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/example.com/msp
+
+  - &Org1
+    Name: Org1MSP
+    ID: Org1MSP
+    MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+    AnchorPeers:
+      - Host: peer0.org1.example.com
+        Port: 7051
+
+  - &Org2
+    Name: Org2MSP
+    ID: Org2MSP
+    MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+    AnchorPeers:
+      - Host: peer0.org2.example.com
+        Port: 7051
+
+  - &Org3
+    Name: Org3MSP
+    ID: Org3MSP
+    MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
+    AnchorPeers:
+      - Host: peer0.org3.example.com
+        Port: 7051
+
+#############################################################################
+# SECTION: Orderer
+#############################################################################
+Orderer: &OrdererDefaults
+  OrdererType: solo
+  Addresses:
+    - orderer.example.com:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 98 MB
+    PreferredMaxBytes: 512 KB
+  Organizations:
+
+############################################################################
+# SECTION: Application
+############################################################################
+Application: &ApplicationDefaults
+    Organizations:

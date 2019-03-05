@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="kajmakNotification.css">
+<div class="containerRest">
+    <div class="menu">
+        <a href="#createKajmak">create kajmak</a>
+        <a href="#listKajmak">list kajmak</a>
+        <a href="#mixKajmak">mix kajmak</a>
+    </div>
+    <div class="main">
+        <h2>Notification list</h2>
+        <button class="logout" ng-click="logOut()">Log Out</button>
+        <!--<button class="query" ng-click="queryAllNotifications()">Show Notifications</button>-->
+        <table id="all_kajmak" class="table" border="1">
+            <thead>
+                <th>Request</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="request in all_requests track by $index">
+                    <td class="textData"> {{request}} </td>
+                    <td><button class="approve" ng-click="approveRequest($index)"><img class="apprej" src="https://cdn1.iconfinder.com/data/icons/airline-flight-booking-mobile-app/15/true-check-accept-approve-512.png"
+                                    alt="approve"></button></td>
+                    <td><button class="reject" ng-click="rejectRequest($index)"><img class="apprej" src="https://cdn1.iconfinder.com/data/icons/airline-flight-booking-mobile-app/15/false-cross-reject-decline-512.png"
+                                    alt="reject"></button></td>
+                </tr>
+            </tbody>
+        </table><br>
+        <table id="all_kajmak" class="table" border="1">
+            <thead>
+                <th>Response</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="response in all_responses track by $index">
+                    <td class="textData"> {{response}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="footer"></div>

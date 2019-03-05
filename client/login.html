@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="login.css">
+<div class="containerLogin">        
+    <div class="main">
+        <h2>Login</h2>
+        <form class="form" autocomplete="off">
+            Enter Username: <br>
+            <input type="text" placeholder="Ex: majra" ng-model="user.username"><br>
+            Enter Password:<br>
+            <input type="password" ng-model="user.password"><br>
+            <input id="login" class="login" type="submit" value="Login" ng-click="loginUser()">
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <h3> {{poruka}} </h3>
+</div>

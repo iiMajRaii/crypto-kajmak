@@ -1,0 +1,76 @@
+<link rel="stylesheet" type="text/css" href="createKajmak.css">
+<div class="containerRest" ng-cloak>
+    <div class="menu">
+        <a class="active" href="#createKajmak">create kajmak</a>
+        <a href="#listKajmak">list kajmak</a>
+        <a href="#mixKajmak" ng-click="queryAllKajmak()">mix kajmak</a>
+    </div>
+    <div class="main" ng-cloak>
+        <h2>Create Kajmak Record</h2>
+        <form class="form" name="createForm" novalidate autocomplete="off">
+            Enter Kajmak ID: <br>
+            <input type="text" placeholder="Ex: 16" name="kajmak_id" ng-model="kajmak.id" ng-pattern="/^[0-9]+$/" required><br>
+            <span ng-messages="createForm.kajmak_id.$error" ng-show="createForm.kajmak_id.$touched">
+                <p ng-message="pattern">Not a number!</p>
+                <p ng-message="required">ID is required!</p>
+            </span>
+            Enter Kajmak Name:<br>
+            <input type="text" placeholder="Ex: Kajmak16" name="kajmak_name" ng-model="kajmak.name" ng-minlength="3" ng-maxlength="15" required><br>
+            <span ng-messages="createForm.kajmak_name.$error" ng-show="createForm.kajmak_name.$touched">
+                <p ng-message="minlength">Name is too short!</p>
+                <p ng-message="maxlength">Name is too long!</p>
+                <p ng-message="required">Name is required!</p>
+            </span>
+            Choose Animal:<br>
+            <select name="kajmak_animal" ng-model="kajmak.animal" required>
+                <option value="">
+                <option value="Sheep">Sheep
+                <option value="Cow">Cow
+                <option value="Goat">Goat
+            </select><br>
+            <span ng-messages="createForm.kajmak_animal.$error" ng-show="createForm.kajmak_animal.$touched">
+                <p ng-message="required">Animal is required!</p>
+            </span>
+            Enter Location:<br>
+            <input type="text" placeholder="Ex: Vlasic" name="kajmak_location" ng-model="kajmak.location" ng-pattern="/^[a-zA-Z]+$/" required><br>
+            <span ng-messages="createForm.kajmak_location.$error" ng-show="createForm.kajmak_location.$touched">
+                <p ng-message="required">Location is required!</p>
+                <p ng-message="pattern">Location name is not valid!</p>
+            </span>
+            Enter Quantity In Grams:<br>
+            <input type="text" placeholder="Ex: 900" name="kajmak_quantity" ng-model="kajmak.quantity" ng-pattern="/^[0-9]+$/" required><br>
+            <span ng-messages="createForm.kajmak_quantity.$error" ng-show="createForm.kajmak_quantity.$touched">
+                <p ng-message="required">Quantity is required!</p>
+                <p ng-message="pattern">Quantity is not a number!</p>
+            </span>
+            Expires in:
+            <input type="text" placeholder="Ex: 6" name="kajmak_number" ng-model="kajmak.number" ng-pattern="/^[0-9]+$/" required><br>
+            <span ng-messages="createForm.kajmak_number.$error" ng-show="createForm.kajmak_number.$touched">
+                <p ng-message="required">Unit number is required!</p>
+                <p ng-message="pattern">Unit is not a number!</p>
+            </span>
+            <select name="kajmak_unit" ng-model="kajmak.unit" required>
+                <option value="">
+                <option value="min">minutes
+                <option value="hour">hours
+                <option value="days">days
+                <option value="month">months
+            </select><br>
+            <span ng-messages="createForm.kajmak_unit.$error" ng-show="createForm.kajmak_unit.$touched">
+                <p ng-message="required">Unit is required!</p>
+            </span>
+            <input id="createSubmit" class="create" type="submit" value="Create" ng-disabled="createForm.$invalid" ng-click="recordKajmak()">
+        </form>
+        <div class="bell" ng-cloak>
+            <a href="#kajmakNotification">
+                <button class="notification" ng-cloak>
+                    <img class="zvono" src="image/notifikacijaIcon.png" alt="notification">
+                </button>
+            </a>
+        </div>
+        <button class="logout" ng-click="logOut()">Log Out</button>
+    </div>
+</div>
+<div class="footer">
+    <h3> {{poruka}} </h3>
+</div>

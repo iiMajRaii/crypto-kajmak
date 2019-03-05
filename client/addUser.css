@@ -1,0 +1,82 @@
+.container {
+    border: solid white 1px;
+    height: 90%;
+    overflow: auto;
+    background-image: url('https://picjumbo.com/wp-content/uploads/white-marble-stone-background-texture-pattern_free_stock_photos_picjumbo_marble_free_stock_photos_picjumbo_com-2210x1473.jpg');
+    /*background-image: url('https://cdn.hipwallpaper.com/i/87/11/COeNh7.png'); */
+}
+
+.main {
+    border: solid white 1px;
+    width:100%;
+    padding:100px 20px;
+    height: 100%;
+    text-align: center;
+}
+
+.main h2 {
+    text-transform: uppercase;
+}
+
+.form {
+    border: solid #bf9b30 3px;
+    background-color: black;
+    width: 40%;
+    font-size: 20px;
+    color: #bf9b30;
+    padding-top:5px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input,select {
+    font-size: 20px;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    padding: 2px;
+    color: black;
+    background-color: #eaeaea;
+}
+
+.addUser, .logout {
+    background: #bf9b30;
+    border: none;
+    height: 50px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
+}
+
+.addUser:hover, .logout:hover {
+    color: silver;
+    font-weight: bold;
+}
+
+.logout {
+    position: absolute;
+    top: 12%;
+    right: 10px;
+}
+
+.footer {
+    background-color: black;
+    height: 10%;
+}
+
+.footer h3 {
+    color: #aadb12;
+    text-align: center;
+}
+
+span p {
+    color: red;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+
+}
+
+[ng-cloak] {
+  display: none !important;
+}

@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="mixKajmak.css">
+<div class="containerRest" ng-cloak>
+    <div class="menu">
+        <a href="#createKajmak">create kajmak</a>
+        <a href="#listKajmak">list kajmak</a>
+        <a class="active" href="#mixKajmak">mix kajmak</a>
+    </div> 
+    <div class="main" ng-cloak>
+        <h2>Mix Kajmak</h2>
+        <form class="form" name="mixForm" novalidate autocomplete="off">
+            Choose First Kajmak: <br>
+            <select name="first_kajmak" ng-model="first_kajmak" required>
+            	<option value="">
+                <option ng-repeat="kajmak in all_kajmak" ng-click="getKajmak1($index)"> {{ kajmak.name }}
+            </select><br>
+            <span ng-messages="mixForm.first_kajmak.$error" ng-show="mixForm.first_kajmak.$touched">
+                <p ng-message="required">Kajmak is required!</p>
+            </span>
+            Choose Percentage of First Kajmak: <br>
+            <input type="text" placeholder="Ex: 40" name="first_percentage" ng-model="kajmak.percentage1" ng-pattern="/^[1-9][0-9]?$|^100$/" required><br>
+            <span ng-messages="mixForm.first_percentage.$error" ng-show="mixForm.first_percentage.$touched">
+                <p ng-message="required">Percentage is required!</p>
+                <p ng-message="pattern">Enter a number between 1 and 100!</p>
+            </span>
+            Choose Second Kajmak:<br>
+            <select name="second_kajmak" ng-model="drugi_kajmak" required>
+            	<option value="">
+                <option ng-repeat="kajmak in all_kajmak" ng-click="getKajmak2($index)"> {{ kajmak.name }}
+            </select><br>
+            <span ng-messages="mixForm.second_kajmak.$error" ng-show="mixForm.second_kajmak.$touched">
+                <p ng-message="required">Kajmak is required!</p>
+            </span>
+            Choose Percentage of Second Kajmak: <br>
+            <input type="text" placeholder="Ex: 60" name="second_percentage" ng-model="kajmak.percentage2" ng-pattern="/^[1-9][0-9]?$|^100$/" required><br>
+            <span ng-messages="mixForm.second_percentage.$error" ng-show="mixForm.second_percentage.$touched">
+                <p ng-message="required">Percentage is required!</p>
+                <p ng-message="pattern">Enter a number between 1 and 100!</p>
+            </span>
+            <input class="mix" type="submit" value="Mix" ng-disabled="mixForm.$invalid" ng-click="mixKajmak()">
+        </form>
+        <div class="bell" ng-cloak>
+            <a href="#kajmakNotification">
+                <button class="notification" ng-cloak>
+                    <img src="image/notifikacijaIcon.png" alt="notification">
+                </button>
+            </a>
+        </div>
+        <button class="logout" ng-click="logOut()">Log Out</button>
+     </div>
+</div>
+<div class="footer">
+    <h3> {{poruka}} </h3>
+</div>

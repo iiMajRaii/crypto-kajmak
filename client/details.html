@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="details.css">
+<div class="containerRest">
+    <div class="menu">
+        <a href="#createKajmak">create kajmak</a>
+        <a href="#listKajmak">list kajmak</a>
+        <a href="#mixKajmak">mix kajmak</a>
+    </div>
+            
+    <div class="main">
+        <h2>Kajmak Details</h2>
+        <div class="details">
+        	<p>ID: {{myreturnedData.Key}}</p>
+        	<p>Name: {{myreturnedData.name}}</p>
+        	<p>Owner: {{myreturnedData.owner}}</p>
+        	<p>Animal: {{myreturnedData.animal}}</p>
+        	<p>Location: {{myreturnedData.location}}</p>
+        	<p>Quantity: {{myreturnedData.quantity}}</p>
+            <p>Production Date: {{myreturnedData.production_date}}</p>
+            <p>Expiration Date: {{myreturnedData.expiration_date}}</p> 	
+        </div>
+        <h3>If you want to sell <span class="detailsSpan">{{myreturnedData.name}}</span> choose the name of the new owner.</h3><br>
+        New Owner: 
+        <select ng-model="owner.name">
+            <option value="">
+            <option ng-repeat="user in all_users"> {{ user }}
+        </select><br>
+        <button class="sell" ng-click="changeOwner()">Sell kajmak</button>
+    </div>
+</div>
+<div class="footer">
+    <h3> {{poruka}} </h3>
+</div>
